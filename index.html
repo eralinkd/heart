@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		html{
+			background-color: #d4d4d4;
+		}
+		.but{
+	-webkit-transition: all .4s ease ;
+	-moz-transition: all .4s ease;
+	-ms-transition: all .4s ease;
+	-o-transition: all .4s ease;
+	transition: all .4s ease;
+}
+.but:hover{
+	background-color: rgb(140, 140, 140);
+	transform: scale(1.1);
+}
+.but:active{
+	background-color: rgb(120, 120, 120);
+	transform: scale(0.9);
+}
+		.heart{
+	background-image: url(heart.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid;
+	height: 400px;
+	width: 400px;
+	margin-top: 6%;
+}
+	</style>
+</head>
+<body>
+	<center><div class="but heart"></div></center>
+	<script>
+		let heart = document.querySelector('.heart');
+
+		function randomInteger(min, max) {
+  // случайное число от min до (max+1)
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+}
+
+function randomColor() {
+    var c = "rgba(";
+    c += randomInteger(1, 255);
+    c += ', ';
+    c += randomInteger(1, 255);
+    c += ', ';
+    c += randomInteger(1, 255);
+    c += ', ';
+    c += '.5)';
+    return c;
+}
+
+heart.onclick = function() {
+	heart.style.backgroundColor = randomColor();
+}
+	</script>
+</body>
+</html>
